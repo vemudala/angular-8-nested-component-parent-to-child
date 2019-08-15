@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="card ">
+        <div class="card-header bg-primary">Tiles</div>
+         <div class="card-body o">
+<select [(ngModel)]='selected'>
+    <option *ngFor="let optionitem of search" value="{{optionitem}}">{{optionitem}}</option>
+</select>
+<input type="text" [(ngModel)]='selectedinput'>
+<button (click)='search_filter()'>search</button>
+<table class="table"  *ngIf="tiles && tiles.length>0">
+    <thead>
+      <tr> 
+           <td>Image</td>
+        <td>Name</td>
+        <td>Model</td>
+        <td>Price</td>
+        <td>Rating</td>
+        <td>Status</td></tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let tile of searcheditems" app-tile [tile]='tile' >  
+                    <!-- app-tile [tile]='tile' this is above syntax app-tile is selector and it is defined property binding , check in tile.ts   -->
+           <!-- here for nested component we just removed td code placed in tile.html ie., child component
+           tiles compoennt is parent component we are using child data in parent component so we use @input binding in tile.ts -->
+              
+        </tr>
+    </tbody>
+
+</table>
+<div  *ngIf="tiles && tiles.length==0">
+    No Data Found...
+</div>
+
+         </div>
+        </div>
+    </div>
+<!-- new -->

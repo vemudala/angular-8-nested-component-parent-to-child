@@ -1,0 +1,10 @@
+td img{
+    height: 45px;
+    width:45px;
+    }
+    tr:nth-child(even){
+        background: lightgray;
+        color: black;
+    }
+    
+    
